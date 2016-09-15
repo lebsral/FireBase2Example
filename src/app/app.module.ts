@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: "AIzaSyCOzx2ntuijEVWYFgC4b9u1gZApUwmXl9k",
+  authDomain: "fbang-6ed8d.firebaseapp.com",
+  databaseURL: "https://fbang-6ed8d.firebaseio.com",
+  storageBucket: "",
+  messagingSenderId: "290526452461"
+};
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class MyAppModule {}
